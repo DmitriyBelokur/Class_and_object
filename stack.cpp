@@ -1,5 +1,9 @@
 #include "stack.hpp"
 
+Stack::Stack()
+ : current_position (-1) {
+}
+
 Pair Stack::push(int value) {
   Pair res {false, ""};
   if (current_position == SIZE_STACK) {
@@ -33,4 +37,8 @@ Value Stack::top() const {
 
 unsigned Stack::GetMaxStackSize() {
   return SIZE_STACK;
+}
+
+int Stack::GetCurrentPosition() const {
+  return current_position;
 }

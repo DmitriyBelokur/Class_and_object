@@ -3,6 +3,9 @@
 
 int main(int argc, char const *argv[]) {
   Stack st;
+  Stack cp_st {st};
+  std::cout << cp_st.GetCurrentPosition() << std::endl;
+  std::cout << st.GetCurrentPosition() << std::endl;
   st.push(90);
   st.push(100);
   std::cout << st.top().value << std::endl;
@@ -23,6 +26,6 @@ int main(int argc, char const *argv[]) {
   std::cout << res.msg << std::endl;
   res = st.pop();
   std::cout << res.msg << std::endl; 
-  st.push(100.20);
+  // st.push(100.20);
   return 0;
 }
