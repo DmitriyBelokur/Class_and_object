@@ -15,15 +15,16 @@ class Stack {
   Pair pop();
   Value top() const;
   int GetCurrentPosition() const;
-  static unsigned GetMaxStackSize();
-  Stack();
-  Stack(const Stack& st) = default;
-  Stack& operator= (const Stack& rhs) = default;
-  ~Stack() = default;
- private:
+  int GetMaxStackSize();
 
-  constexpr static unsigned SIZE_STACK = 255;
-  int array[SIZE_STACK];
-  int current_position;
+  Stack(int size);
+  Stack(const Stack& st);
+  Stack() = delete;
+  ~Stack();
+  Stack& operator=(const Stack& st);
+ private:
+  int* array = nullptr;
+  int current_position = -1;
+  int SIZE_STACK = 5;
 };
 
